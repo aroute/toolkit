@@ -13,10 +13,9 @@ RUN yum upgrade -y && yum install -y gettext iputils mlocate git curl which open
 && tar xzvf /tmp/cpd-cli.tar.gz -C /usr/local/bin/ \
 && rm -rf /tmp/cpd-cli.tar.gz
 
+RUN useradd -ms /bin/bash demo
 RUN usermod -aG root demo && \
     echo "demo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-    
-# RUN useradd -ms /bin/bash demo
 USER demo
 # WORKDIR /home/demo/work
 
