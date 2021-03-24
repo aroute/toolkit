@@ -15,6 +15,6 @@ RUN yum upgrade -y && yum install -y gettext iputils mlocate git curl which open
 
 RUN useradd -ms /bin/bash demo
 USER demo
-WORKDIR /home/demo
+WORKDIR /home/demo/work
 
 ENTRYPOINT ["/bin/bash", "-ce", "tail -f /dev/null"]
